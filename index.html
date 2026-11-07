@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<section class="profile">
+  <div>
+    <h1>{{ site.title | escape }}</h1>
+    <p class="role">PhD student · University of Freiburg</p>
+    <p>I study how robots recognize places they have seen before and how video models can help them carry out multi-step tasks. I’m a PhD student in the <a href="https://rl.informatik.uni-freiburg.de/people/yang/">Robot Learning Lab</a>. Before Freiburg, I studied mechanical engineering at ETH Zurich.</p>
+    <div class="links"><a href="{{ site.scholar | escape }}">Google Scholar</a><a href="{{ site.github | escape }}">GitHub</a><a href="{{ '/blog/' | relative_url }}">Blog</a></div>
+  </div>
+  <img class="portrait" src="https://rl.informatik.uni-freiburg.de/img/people/liudi" alt="Liudi Yang" width="150" height="170">
+</section>
+<section class="section">
+  <h2>Selected publications</h2>
+  <article class="paper">
+    <div class="venue">IROS <br>2025</div>
+    <div><h3><a href="https://crepuscularlight.github.io/roboenvision/">RoboEnvision: A Long-Horizon Video Generation Model for Multi-Task Robot Manipulation</a></h3>
+    <p class="authors"><strong>Liudi Yang</strong>*, Yang Bai* et al. · *Equal contribution</p>
+    <p>Given a sequence of instructions, RoboEnvision generates a keyframe for each step, fills in the motion between frames, and uses the video to predict robot joint states.</p>
+    <div class="links"><a href="https://arxiv.org/abs/2506.22007">Paper</a><a href="https://crepuscularlight.github.io/roboenvision/">Project &amp; videos</a></div></div>
+  </article>
+  <article class="paper">
+    <div class="venue">JINT <br>2025</div>
+    <div><h3><a href="https://doi.org/10.1007/s10846-025-02223-6">LiDAR Loop Closure Detection using Semantic Graphs with Graph Attention Networks</a></h3>
+    <p class="authors"><strong>Liudi Yang</strong>, Ruben Mascaro, Ignacio Alzugaray, Sai Manoj Prakhya, Marco Karrer, Ziyuan Liu and Margarita Chli</p>
+    <p>Can a robot recognize a street on its second visit? This work compares graphs of objects in LiDAR scans to find a matching place and estimates the relative pose between the scans.</p>
+    <div class="links"><a href="https://doi.org/10.1007/s10846-025-02223-6">Paper</a><a href="https://github.com/crepuscularlight/SemanticLoopClosure">Code</a></div></div>
+  </article>
+  <a href="{{ site.scholar | escape }}">All publications on Google Scholar →</a>
+</section>
+<section class="section">
+  <h2>From the blog</h2>
+  {% for post in site.posts limit:1 %}
+    <p class="date">{{ post.date | date: "%B %-d, %Y" }}</p>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+  {% endfor %}
+  <a href="{{ '/blog/' | relative_url }}">Browse the blog →</a>
+</section>

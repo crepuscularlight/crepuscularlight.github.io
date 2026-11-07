@@ -1,0 +1,8 @@
+title: Liudi Yang
+description: Research in robot perception, embodied AI and SLAM.
+url: https://crepuscularlight.github.io
+baseurl: ""
+permalink: /blog/:year/:month/:day/:title/
+scholar: "https://scholar.google.com/citations?user=W22lURwAAAAJ&hl=en"
+github: https://github.com/crepuscularlight
+exclude: [README.md]
