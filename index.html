@@ -14,6 +14,36 @@ layout: default
   <h2>Selected publications</h2>
   <article class="paper">
     <figure class="method">
+      <a class="diagram" href="{{ '/assets/figures/confctrl-method.webp' | relative_url }}" aria-label="Open the full-size ConfCtrl method diagram">
+        <img src="{{ '/assets/figures/confctrl-method.webp' | relative_url }}" width="2000" height="778" loading="lazy" decoding="async" alt="Projected point clouds, confidence maps and camera poses guide the video diffusion model through prediction and update steps.">
+      </a>
+    </figure>
+    <div class="paper-info">
+      <h3><a href="https://crepuscularlight.github.io/confctrl_website/">ConfCtrl: Enabling Precise Camera Control in Video Diffusion via Confidence-Aware Interpolation</a></h3>
+      <p class="authors"><strong>Liudi Yang</strong>, George Eskandar, Fengyi Shen, Mohammad Altillawi, Yang Bai, Chi Zhang, Ziyuan Liu and Abhinav Valada</p>
+      <p class="venue">ECCV 2026</p>
+      <p class="method-summary">ConfCtrl generates video along a chosen camera path from two input views. It uses reliable 3D projections to guide the model and lets diffusion fill in uncertain regions.</p>
+      <div class="links"><a href="https://arxiv.org/abs/2603.09819">Paper</a><a href="https://crepuscularlight.github.io/confctrl_website/">Project &amp; videos</a></div>
+      <small class="figure-credit">Figure: Liudi Yang et al. · <a href="https://github.com/crepuscularlight/confctrl_website/blob/main/static/images/method.webp">Original diagram</a></small>
+    </div>
+  </article>
+  <article class="paper">
+    <figure class="method">
+      <a class="diagram" href="{{ '/assets/figures/covar-method.png' | relative_url }}" aria-label="Open the full-size CoVAR method diagram">
+        <img src="{{ '/assets/figures/covar-method.png' | relative_url }}" width="3042" height="878" loading="lazy" decoding="async" alt="Video and action diffusion branches exchange features through bridge attention. A refinement module converts coarse robot actions into precise controls.">
+      </a>
+    </figure>
+    <div class="paper-info">
+      <h3><a href="https://crepuscularlight.github.io/covar_website/">CoVAR: Co-generation of Video and Action for Robotic Manipulation via Multi-Modal Diffusion</a></h3>
+      <p class="authors"><strong>Liudi Yang</strong>, Yang Bai, George Eskandar, Fengyi Shen, Mohammad Altillawi, Dong Chen, Ziyuan Liu and Abhinav Valada</p>
+      <p class="venue">ICRA 2026</p>
+      <p class="method-summary">Given an instruction, an image, and the robot’s joint states, CoVAR generates a video of the task and the actions to carry it out. Bridge attention lets the video and action models exchange information during generation.</p>
+      <div class="links"><a href="https://arxiv.org/abs/2512.16023">Paper</a><a href="https://crepuscularlight.github.io/covar_website/">Project &amp; videos</a></div>
+      <small class="figure-credit">Figure: Liudi Yang et al. · <a href="https://github.com/crepuscularlight/covar_website/blob/main/static/images/method.png">Original diagram</a></small>
+    </div>
+  </article>
+  <article class="paper">
+    <figure class="method">
       <a class="diagram" href="{{ '/assets/figures/roboenvision-method.png' | relative_url }}" aria-label="Open full-size diagram: RoboEnvision architecture showing keyframe diffusion, attention modules and a policy that predicts joint angles and gripper state.">
         <img src="{{ '/assets/figures/roboenvision-method.png' | relative_url }}" width="4175" height="1633" loading="lazy" decoding="async" alt="RoboEnvision architecture showing keyframe diffusion, attention modules and a policy that predicts joint angles and gripper state.">
       </a>
