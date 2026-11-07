@@ -29,17 +29,29 @@ p { margin: .6rem 0 1rem; }
 .portrait { width: 150px; height: 170px; object-fit: cover; border-radius: 5px; }
 .role { color: var(--quiet); font-size: 1.15rem; }
 .section { padding: 1.8rem 0; border-top: 1px solid var(--line); }
-.paper { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); gap: 1rem; margin: 1.7rem 0; }
-.venue,.date { color: var(--quiet); font: .82rem/1.5 "IBM Plex Mono", monospace; }
-.venue { border-left: 2px solid var(--accent); align-self: start; padding-left: .6rem; }
-.paper > div { min-width: 0; }
-.method { margin: 1rem 0; }
-.diagram { display: block; padding: .55rem; border: 1px solid var(--line); border-radius: 5px; background: #fff; cursor: zoom-in; }
-.diagram:hover { border-color: var(--accent); }
+.paper {
+  display: grid;
+  grid-template-columns: min(25%, 180px) minmax(0, 1fr);
+  align-items: center;
+  column-gap: clamp(12px, 2.5vw, 22px);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.section > h2 + .paper { margin-top: .8rem; border-top: 1px solid var(--line); }
+.paper:last-of-type { margin-bottom: .8rem; border-bottom: 0; }
+.method { margin: 0; }
+.diagram { display: block; background: white; cursor: zoom-in; }
+.diagram:hover { outline: 1px solid var(--line); }
 .diagram img { display: block; width: 100%; height: auto; }
-.method figcaption { margin-top: .55rem; }
-.method small { display: block; margin-top: .3rem; color: var(--quiet); font-size: .8rem; }
-.authors { font-size: .9rem; color: var(--quiet); }
+.paper-info { min-width: 0; }
+.paper h3 { font-size: 1.15rem; line-height: 1.28; }
+.paper p { margin: .25rem 0; }
+.authors, .method-summary { font-size: .9rem; line-height: 1.45; }
+.authors { color: var(--quiet); }
+.venue { font-size: .9rem; font-style: italic; }
+.paper .links { gap: .85rem; margin-top: .3rem; font-size: .9rem; }
+.figure-credit { display: block; color: var(--quiet); margin-top: .3rem; font-size: .75rem; }
+.date { color: var(--quiet); font: .82rem/1.5 "IBM Plex Mono", monospace; }
 .links { font-size: .96rem; }
 .section > h3 { margin: .4rem 0 1rem; }
 .blog { padding: 3rem 0; min-height: 55vh; }
@@ -53,7 +65,5 @@ footer { border-top: 1px solid var(--line); color: var(--quiet); font-size: .9re
 @media (max-width: 600px) {
   .profile { grid-template-columns: 1fr; gap: 1.25rem; padding-top: 2rem; }
   .portrait { width: 100px; height: 110px; grid-row: 1; }
-  .paper { grid-template-columns: 1fr; gap: .6rem; }
-  .venue br { display: none; }
-  .venue br::after { content: " "; }
+  .paper { column-gap: 12px; }
 }
