@@ -29,9 +29,16 @@ p { margin: .6rem 0 1rem; }
 .portrait { width: 150px; height: 170px; object-fit: cover; border-radius: 5px; }
 .role { color: var(--quiet); font-size: 1.15rem; }
 .section { padding: 1.8rem 0; border-top: 1px solid var(--line); }
-.paper { display: grid; grid-template-columns: 4.2rem 1fr; gap: 1rem; margin: 1.7rem 0; }
+.paper { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); gap: 1rem; margin: 1.7rem 0; }
 .venue,.date { color: var(--quiet); font: .82rem/1.5 "IBM Plex Mono", monospace; }
 .venue { border-left: 2px solid var(--accent); align-self: start; padding-left: .6rem; }
+.paper > div { min-width: 0; }
+.method { margin: 1rem 0; }
+.diagram { display: block; padding: .55rem; border: 1px solid var(--line); border-radius: 5px; background: #fff; cursor: zoom-in; }
+.diagram:hover { border-color: var(--accent); }
+.diagram img { display: block; width: 100%; height: auto; }
+.method figcaption { margin-top: .55rem; }
+.method small { display: block; margin-top: .3rem; color: var(--quiet); font-size: .8rem; }
 .authors { font-size: .9rem; color: var(--quiet); }
 .links { font-size: .96rem; }
 .section > h3 { margin: .4rem 0 1rem; }
