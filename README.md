@@ -9,7 +9,7 @@
 
 ## Make it yours
 
-Edit `index.html` to update the biography and selected papers. The portrait currently loads from your Freiburg lab profile. To host your own photo, upload it to `assets` and change the image source in `index.html`. Edit `_config.yml` for the display name and profile links. The shared styling lives in `assets/site.css`.
+Edit `index.html` to update the biography and selected papers. The portrait is hosted locally at `assets/portrait.png`. Replace that file to update your photo, or change the image source in `index.html` to use a different filename. Edit `_config.yml` for the display name and profile links. The shared styling lives in `assets/site.css`.
 
 ## Add a blog post
 

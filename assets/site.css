@@ -26,7 +26,7 @@ h3 a, .entry h2 a { color: inherit; text-decoration: none; }
 h3 a:hover,.entry h2 a:hover { text-decoration: underline; }
 p { margin: .6rem 0 1rem; }
 .profile { display: grid; align-items: center; grid-template-columns: 1fr auto; gap: 2rem; padding: 3.2rem 0 2.5rem; }
-.portrait { width: 150px; height: 170px; object-fit: cover; border-radius: 5px; }
+.portrait { width: 150px; height: 170px; object-fit: cover; object-position: center top; border-radius: 5px; }
 .role { color: var(--quiet); font-size: 1.15rem; }
 .section { padding: 1.8rem 0; border-top: 1px solid var(--line); }
 .paper {
