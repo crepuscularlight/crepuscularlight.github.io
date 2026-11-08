@@ -31,26 +31,56 @@ p { margin: .6rem 0 1rem; }
 .section { padding: 1.8rem 0; border-top: 1px solid var(--line); }
 .paper {
   display: grid;
-  grid-template-columns: min(25%, 180px) minmax(0, 1fr);
-  align-items: center;
-  column-gap: clamp(12px, 2.5vw, 22px);
-  padding: 1rem 0;
+  grid-template-columns: minmax(120px, 160px) minmax(0, 1fr);
+  grid-template-areas:
+    "venue   venue"
+    "title   title"
+    "authors authors"
+    "method  summary"
+    "method  links"
+    "credit  credit";
+  column-gap: 1rem;
+  row-gap: .3rem;
+  padding: 1.2rem 0;
   border-bottom: 1px solid var(--line);
 }
-.section > h2 + .paper { margin-top: .8rem; border-top: 1px solid var(--line); }
-.paper:last-of-type { margin-bottom: .8rem; border-bottom: 0; }
-.method { margin: 0; }
-.diagram { display: block; background: white; cursor: zoom-in; }
-.diagram:hover { outline: 1px solid var(--line); }
+.section > h2 + .paper { margin-top: .9rem; border-top: 1px solid var(--line); }
+.paper:last-of-type { margin-bottom: .6rem; border-bottom: 0; }
+.paper h3 {
+  grid-area: title;
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+.paper p { margin: 0; }
+.paper .venue {
+  grid-area: venue;
+  font-size: .77rem;
+  font-weight: 650;
+  letter-spacing: .06em;
+  color: var(--accent);
+}
+.paper .authors {
+  grid-area: authors;
+  margin-bottom: .32rem;
+  color: var(--quiet);
+  font-size: .88rem;
+  line-height: 1.45;
+}
+.method { grid-area: method; align-self: start; width: 100%; max-width: 160px; margin: 0; }
+.diagram {
+  display: block;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  cursor: zoom-in;
+}
+.diagram:hover, .diagram:focus-visible { border-color: var(--accent); }
 .diagram img { display: block; width: 100%; height: auto; }
-.paper-info { min-width: 0; }
-.paper h3 { font-size: 1.15rem; line-height: 1.28; }
-.paper p { margin: .25rem 0; }
-.authors, .method-summary { font-size: .9rem; line-height: 1.45; }
-.authors { color: var(--quiet); }
-.venue { font-size: .9rem; font-style: italic; }
-.paper .links { gap: .85rem; margin-top: .3rem; font-size: .9rem; }
-.figure-credit { display: block; color: var(--quiet); margin-top: .3rem; font-size: .75rem; }
+.method-summary { grid-area: summary; font-size: .92rem; line-height: 1.45; }
+.paper .links { grid-area: links; gap: .2rem 1rem; font-size: .9rem; }
+.figure-credit { grid-area: credit; color: var(--quiet); font-size: .73rem; line-height: 1.4; }
 .date { color: var(--quiet); font: .82rem/1.5 "IBM Plex Mono", monospace; }
 .links { font-size: .96rem; }
 .section > h3 { margin: .4rem 0 1rem; }
@@ -65,5 +95,17 @@ footer { border-top: 1px solid var(--line); color: var(--quiet); font-size: .9re
 @media (max-width: 600px) {
   .profile { grid-template-columns: 1fr; gap: 1.25rem; padding-top: 2rem; }
   .portrait { width: 100px; height: 110px; grid-row: 1; }
-  .paper { column-gap: 12px; }
+  .paper {
+    grid-template-columns: minmax(84px, 108px) minmax(0, 1fr);
+    grid-template-areas:
+      "venue   venue"
+      "title   title"
+      "authors authors"
+      "summary summary"
+      "method  links"
+      "credit  credit";
+    gap: .35rem .85rem;
+  }
+  .paper .links { align-self: center; }
+  .paper .authors { margin-bottom: 0; }
 }
