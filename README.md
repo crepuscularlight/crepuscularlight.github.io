@@ -25,7 +25,7 @@ description: "One sentence for the blog index."
 Write the post here in Markdown.
 ```
 
-Commit the file. Jekyll creates a page for it, lists it on `/blog/` newest first, and shows the newest post on the homepage. The included post is an example draft for you to edit, replace or delete before uploading. Use a present or past date for immediate publication.
+Commit the file. Jekyll creates a page for it, lists it on `/blog/` newest first, and shows the newest post on the homepage. The first post is Score Distillation Sampling. The original example is preserved in `_drafts/recognizing-a-street.md` and is not published. For posts with equations, add `math: true` to the front matter; use `$$...$$` for inline math and standalone `$$` lines for display equations. Use a present or past date for immediate publication.
 
 ## Sources
 

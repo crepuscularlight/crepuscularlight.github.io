@@ -6,3 +6,7 @@ permalink: /blog/:year/:month/:day/:title/
 scholar: "https://scholar.google.com/citations?user=W22lURwAAAAJ&hl=en"
 github: https://github.com/crepuscularlight
 exclude: [README.md]
+
+markdown: kramdown
+kramdown:
+  math_engine: mathjax

@@ -109,3 +109,7 @@ footer { border-top: 1px solid var(--line); color: var(--quiet); font-size: .9re
   .paper .links { align-self: center; }
   .paper .authors { margin-bottom: 0; }
 }
+
+.reading pre { max-width: 100%; overflow-x: auto; padding: 1rem; border: 1px solid var(--line); border-radius: 5px; background: #f2f5f2; font-size: .82rem; line-height: 1.6; }
+.reading blockquote { margin: 1.5rem 0; padding: .1rem 1rem; border-left: 3px solid var(--accent); }
+.reading .MathJax_Display { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: .5rem 0; }
