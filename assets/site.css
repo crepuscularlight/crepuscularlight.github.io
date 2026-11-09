@@ -87,10 +87,21 @@ p { margin: .6rem 0 1rem; }
 .blog { padding: 3rem 0; min-height: 55vh; }
 .entry { margin-top: 2rem; padding-top: 1.3rem; border-top: 1px solid var(--line); }
 .entry h2 { margin-top: .45rem; }
-.reading { max-width: 65ch; }
-.reading h1 { font-size: clamp(2.4rem,5vw,3.4rem); margin-bottom: 1.3rem; }
-.reading h2 { font-size: 1.65rem; margin-top: 1.6rem; }
-.reading .date { margin: 2rem 0 .4rem; }
+.reading { max-width: 72ch; margin-inline: auto; padding-top: clamp(2rem, 5vw, 3.5rem); }
+.post-back { display: inline-block; font-size: .9rem; font-weight: 600; text-decoration: none; }
+.post-back:hover { text-decoration: underline; }
+.post-header { margin: 2.5rem 0 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--line); }
+.reading .date { margin: 0 0 .9rem; letter-spacing: .02em; }
+.reading h1 { max-width: 20ch; font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.08; overflow-wrap: anywhere; }
+.post-description { max-width: 60ch; margin: 1.2rem 0 0; color: var(--quiet); font-size: 1.1rem; line-height: 1.6; }
+.post-content { font-size: 1.05rem; line-height: 1.8; overflow-wrap: break-word; }
+.post-content p { margin: 0 0 1.25rem; }
+.post-content h2 { margin: 2.8rem 0 1rem; font-size: clamp(1.55rem, 3vw, 1.85rem); line-height: 1.25; }
+.post-content h3 { margin: 2rem 0 .8rem; }
+.post-content ul, .post-content ol { padding-left: 1.5rem; }
+.post-content li + li { margin-top: .4rem; }
+.post-content img { max-width: 100%; height: auto; }
+.post-content :not(pre) > code { padding: .1em .3em; border-radius: 3px; background: #edf2ee; font-size: .88em; }
 footer { border-top: 1px solid var(--line); color: var(--quiet); font-size: .9rem; padding: 1.3rem 0; }
 @media (max-width: 600px) {
   .profile { grid-template-columns: 1fr; gap: 1.25rem; padding-top: 2rem; }
@@ -110,6 +121,6 @@ footer { border-top: 1px solid var(--line); color: var(--quiet); font-size: .9re
   .paper .authors { margin-bottom: 0; }
 }
 
-.reading pre { max-width: 100%; overflow-x: auto; padding: 1rem; border: 1px solid var(--line); border-radius: 5px; background: #f2f5f2; font-size: .82rem; line-height: 1.6; }
+.reading pre { max-width: 100%; overflow-x: auto; margin: 1.5rem 0; padding: 1.2rem; border: 1px solid var(--line); border-radius: 5px; background: #f2f5f2; font-size: .82rem; line-height: 1.6; }
 .reading blockquote { margin: 1.5rem 0; padding: .1rem 1rem; border-left: 3px solid var(--accent); }
 .reading .MathJax_Display { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: .5rem 0; }
