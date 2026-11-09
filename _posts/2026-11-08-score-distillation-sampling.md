@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Score Distillation Sampling
+title: "1. Score Distillation Sampling"
 date: 2026-11-08 12:00:00 +0100
 description: How a frozen diffusion model guides a 3D representation, from the SDS gradient and KL interpretation to an autodiff implementation.
 math: true
