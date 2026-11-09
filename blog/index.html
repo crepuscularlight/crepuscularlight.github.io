@@ -6,13 +6,34 @@ permalink: /blog/
 <section class="blog">
   <h1>Blog</h1>
   <p class="role">Notes on robotics and research.</p>
-  {% for post in site.posts %}
+  {% assign diffusion_posts = site.categories['diffusion-models'] %}
+  {% if diffusion_posts.size > 0 %}
+  <section class="blog-topic" aria-labelledby="diffusion-models">
+  <h2 id="diffusion-models">Diffusion Models</h2>
+  {% for post in diffusion_posts %}
   <article class="entry">
     <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-    <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
     {% if post.description %}<p>{{ post.description | escape }}</p>{% endif %}
   </article>
-  {% else %}
-  <p>The first post is on its way.</p>
   {% endfor %}
+  </section>
+  {% endif %}
+  {% assign has_other_posts = false %}
+  {% for post in site.posts %}
+    {% unless post.categories contains 'diffusion-models' %}
+      {% unless has_other_posts %}
+        <h2 class="other-posts-heading">Other Posts</h2>
+        {% assign has_other_posts = true %}
+      {% endunless %}
+      <article class="entry">
+        <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        {% if post.description %}<p>{{ post.description | escape }}</p>{% endif %}
+      </article>
+    {% endunless %}
+  {% endfor %}
+  {% if site.posts.size == 0 %}
+  <p>The first post is on its way.</p>
+  {% endif %}
 </section>

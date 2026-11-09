@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: [diffusion-models]
 title: "2. Variational Score Distillation: From SDS to DMD"
 date: 2026-11-09 12:00:00 +0100
 description: "Understanding VSD through variational inference, its connection to SDS and DMD, and a PyTorch-style implementation of the two alternating updates."
