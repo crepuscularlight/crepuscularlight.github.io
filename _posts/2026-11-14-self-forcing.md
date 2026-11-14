@@ -2,7 +2,7 @@
 layout: post
 categories: [diffusion-models]
 title: "7. Self Forcing: Bridging the Train–Test Gap in Autoregressive Video Diffusion"
-date: 2026-11-14 00:00:00 +0100
+date: 2026-11-14 12:00:00 +0100
 description: "How self-rollout, video-level distribution matching, and KV caching improve autoregressive video generation."
 math: true
 ---
