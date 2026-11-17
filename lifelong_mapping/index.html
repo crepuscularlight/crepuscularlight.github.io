@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A modular lifelong 3D mapping framework for hand-held and robot-mounted LiDAR systems.">
+  <meta name="citation_title" content="Lifelong 3D Mapping Framework for Hand-held &amp; Robot-mounted LiDAR Mapping Systems">
+  <meta name="citation_author" content="Yang, Liudi"><meta name="citation_author" content="Prakhya, Sai Manoj"><meta name="citation_author" content="Zhu, Senhua"><meta name="citation_author" content="Liu, Ziyuan">
+  <meta name="citation_publication_date" content="2024">
+  <title>Lifelong 3D Mapping Framework</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css"><link rel="stylesheet" href="static/css/template.css"><link rel="stylesheet" href="static/css/project.css">
+</head>
+<body>
+<main>
+  <section class="hero"><div class="hero-body"><div class="container is-max-desktop has-text-centered">
+    <p class="eyebrow">IEEE Robotics and Automation Letters · 2024</p>
+    <h1 class="title is-1 publication-title">Lifelong 3D Mapping Framework for Hand-held &amp; Robot-mounted LiDAR Mapping Systems</h1>
+    <div class="is-size-5 publication-authors"><a href="https://scholar.google.com/citations?user=W22lURwAAAAJ&amp;hl=en">Liudi Yang</a><sup>*</sup>, Sai Manoj Prakhya<sup>*</sup>, Senhua Zhu, Ziyuan Liu</div>
+    <div class="is-size-5 publication-authors affiliation">Huawei<br><small><sup>*</sup> Equal contribution</small></div>
+    <div class="publication-links">
+      <a class="button is-normal is-rounded is-dark" href="https://arxiv.org/pdf/2501.18110">Paper PDF ↗</a>
+      <a class="button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2501.18110">arXiv ↗</a>
+      <a class="button is-normal is-rounded is-dark" href="https://doi.org/10.1109/LRA.2024.3417113">IEEE ↗</a>
+      <a class="button is-normal is-rounded is-dark" href="#video">Video ↓</a>
+    </div>
+  </div></div></section>
+
+  <section id="video" class="hero teaser"><div class="container is-max-desktop"><div class="hero-body">
+    <div class="video-link has-text-centered"><h2 class="title is-3">Introduction video</h2><p>Watch the accompanying project video on IEEE Xplore.</p><a class="button is-normal is-rounded is-dark" href="https://ieeexplore.ieee.org/abstract/document/10566021/media#media">Watch video ↗</a></div>
+  </div></div></section>
+
+  <section class="section hero is-light"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column is-four-fifths">
+    <h2 class="title is-3 has-text-centered">Abstract</h2>
+    <div class="content has-text-justified"><p>Maps of real environments change over time. This work presents a modular, cloud-native framework for maintaining 3D maps collected with hand-held and robot-mounted LiDAR systems. It removes dynamic points, aligns maps from different sessions, detects additions and removals, and maintains a versioned base map. By storing changes and session boundaries, the system can reconstruct earlier clean session maps and query changes between sessions without retaining the original input maps. The framework is evaluated using commercial hand-held mapping devices and open-source robot-mounted LiDAR SLAM systems.</p></div>
+  </div></div></div></section>
+
+  <section class="section"><div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">A map that evolves over time</h2>
+    <p class="section-intro has-text-centered">From individual mapping sessions to a shared, queryable history of an environment.</p>
+    <figure class="session-figure"><img src="static/images/sessions.png" alt="Three LiDAR point-cloud mapping sessions shown in different orientations" loading="lazy"><figcaption>Example point clouds from separate mapping sessions.</figcaption></figure>
+    <div class="steps">
+      <article><span>01</span><h3>Remove dynamic points</h3><p>Clean each session map with a sensor-setup agnostic pipeline that combines occupancy information with geometric processing.</p></article>
+      <article><span>02</span><h3>Align sessions</h3><p>Bring maps into a common reference frame using feature matching followed by fine registration.</p></article>
+      <article><span>03</span><h3>Detect changes</h3><p>Compare aligned maps to identify geometry that appeared or disappeared between sessions.</p></article>
+      <article><span>04</span><h3>Maintain map versions</h3><p>Update the base map and store differences and boundaries to reconstruct earlier sessions and query changes.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section hero is-light"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column is-four-fifths">
+    <h2 class="title is-3 has-text-centered">Paper</h2>
+    <p class="has-text-centered">Read the complete method, experiments, and results in the paper.</p>
+    <div class="has-text-centered paper-link"><a class="button is-rounded is-dark" href="https://arxiv.org/pdf/2501.18110">Read the paper ↗</a></div>
+    <h3 class="title is-4 citation-title">Citation</h3>
+    <pre><code>@article{yang2024lifelong,
+  title   = {Lifelong 3D Mapping Framework for Hand-held and Robot-mounted LiDAR Mapping Systems},
+  author  = {Yang, Liudi and Prakhya, Sai Manoj and Zhu, Senhua and Liu, Ziyuan},
+  journal = {IEEE Robotics and Automation Letters},
+  year    = {2024},
+  doi     = {10.1109/LRA.2024.3417113}
+}</code></pre>
+  </div></div></div></section>
+</main>
+<footer class="footer"><div class="content has-text-centered"><p>Project page for Lifelong 3D Mapping · <a href="https://arxiv.org/abs/2501.18110">Paper</a></p><p>Page design adapted from the CoVAR project website.</p></div></footer>
+</body>
+</html>
