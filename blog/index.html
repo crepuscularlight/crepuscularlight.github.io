@@ -1,26 +1,29 @@
 ---
 layout: default
 title: Blog
-permalink: /blog/
 ---
 <section class="blog">
   <h1>Blog</h1>
   <p class="role">Notes on robotics and research.</p>
-  {% assign diffusion_posts = site.categories['diffusion-models'] %}
-  {% if diffusion_posts.size > 0 %}
-  <section class="blog-topic" aria-labelledby="diffusion-models">
-  <h2 id="diffusion-models">Diffusion Models</h2>
-  {% for post in diffusion_posts %}
-  <article class="entry">
-    <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
-    {% if post.description %}<p>{{ post.description | escape }}</p>{% endif %}
-  </article>
+  {% assign has_diffusion_posts = false %}
+  {% for post in paginator.posts %}
+    {% if post.categories contains 'diffusion-models' %}
+      {% unless has_diffusion_posts %}
+      <section class="blog-topic" aria-labelledby="diffusion-models">
+        <h2 id="diffusion-models">Diffusion Models</h2>
+        {% assign has_diffusion_posts = true %}
+      {% endunless %}
+        <article class="entry">
+          <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+          {% if post.description %}<p>{{ post.description | escape }}</p>{% endif %}
+        </article>
+    {% endif %}
   {% endfor %}
-  </section>
-  {% endif %}
+  {% if has_diffusion_posts %}</section>{% endif %}
+
   {% assign has_other_posts = false %}
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
     {% unless post.categories contains 'diffusion-models' %}
       {% unless has_other_posts %}
         <h2 class="other-posts-heading">Other Posts</h2>
@@ -35,5 +38,21 @@ permalink: /blog/
   {% endfor %}
   {% if site.posts.size == 0 %}
   <p>The first post is on its way.</p>
+  {% endif %}
+
+  {% if paginator.total_pages > 1 %}
+  <nav class="blog-pagination" aria-label="Blog pages">
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <a href="{{ '/blog/' | relative_url }}">← Newer posts</a>
+      {% else %}
+        <a href="{{ paginator.previous_page_path | relative_url }}">← Newer posts</a>
+      {% endif %}
+    {% endif %}
+    <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}">Older posts →</a>
+    {% endif %}
+  </nav>
   {% endif %}
 </section>
